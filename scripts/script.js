@@ -100,7 +100,7 @@ function removeq(){
     });
 } 
 
-const url = "http://localhost:8080";
+const url = "https://ades-2b03.herokuapp.com/";
 function getq(number){
     //console.log(number);
     let compid = document.getElementById("companyid"+number).value;
@@ -196,7 +196,7 @@ function getArrivalRate(id) {
   var queueid = queue.options[queue.selectedIndex].innerHTML;
   //console.log(queueid);
   const url =
-    "http://localhost:8080/company/arrival_rate?queue_id=" + queueid + "&from=" + encodeURIComponent(from) +"&duration=" + duration;
+    "https://ades-2b03.herokuapp.com/company/arrival_rate?queue_id=" + queueid + "&from=" + encodeURIComponent(from) +"&duration=" + duration;
   return fetch(url)
     .then(function (response) {
       return response.json();
@@ -237,75 +237,3 @@ function createChart(results,chartid) {
   var chart = new google.visualization.LineChart(document.getElementById(chartid));
   chart.draw(data, options);
 }
-
-// window.onload = function(){
-//   google.charts.load('current', {'packages':['corechart']});
-//   google.charts.setOnLoadCallback(drawChart);
-//   }
-
-
-
-// window.onload = function(){
-//   google.charts.load('current', {'packages':['corechart']});
-//   google.charts.setOnLoadCallback(drawChart);
-//   }
-
-
-// window.onload = function(){
-//   google.charts.load('current', {'packages':['corechart']});
-//   google.charts.setOnLoadCallback(drawChart);
-//   }
-
-
-// function drawChart() {
-//   var data = google.visualization.arrayToDataTable([
-//     ['Year', 'Sales', 'Expenses'],
-//     ['2004',  1000,      400],
-//     ['2005',  1170,      460],
-//     ['2006',  660,       1120],
-//     ['2007',  1030,      540]
-//   ]);
-
-//   var options = {
-//     title: 'Company Performance',
-//     curveType: 'function',
-//     legend: { position: 'bottom' }
-//   };
-
-//   var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-//   chart.draw(data, options);
-// }
-
-// })
-// // addGraph()      
-// }
-
-// var ctx = document.getElementById("line-chart");
-// var lineChart = new Chart (ctx, {
-// type: 'line',
-// data: {
-// labels: ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"],
-// datasets: [{
-//   label: "2015",
-//   data: [10,8,6,5,12,8,16,17,6,7,6,10]
-// }]
-// }
-// })
-// new Chart(ctx).Line(data);
-// var lineChart = new Chart(ctx, {
-//   type: 'line',
-//   data: {
-//     labels: ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"],
-//     datasets: [""]
-//   },
-//   options
-// });
-
-// function addGraph(){
-//   var myLineChart = new Chart(ctx, {
-//     type: 'line',
-//     data: data,
-//     options: options
-//   });
-// }
